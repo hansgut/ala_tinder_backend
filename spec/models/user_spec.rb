@@ -11,4 +11,9 @@ RSpec.describe User, type: :model do
     subject.name = nil
     expect(subject).to_not be_valid
   end
+
+  it 'gallery created' do
+    subject.save!
+    expect(subject.gallery).to be_an_present
+  end
 end

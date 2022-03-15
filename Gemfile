@@ -7,9 +7,10 @@ ruby "3.1.1"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
-gem "jwt", "~> 2.3.0"
+gem "active_model_serializers"
 gem "bcrypt", "~> 3.1.17"
+gem "jwt", "~> 2.3.0"
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -33,18 +34,20 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'database_cleaner-active_record'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'factory_bot_rails'
+  gem 'pry'
   gem "rspec-rails", "~> 5.1.1"
 end
 
 group :development do
-  gem 'pry'
+
 end
 
