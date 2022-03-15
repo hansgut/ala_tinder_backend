@@ -4,7 +4,7 @@ RSpec.describe 'AuthenticationControllers', type: :request do
   include JsonWebToken
 
   before do
-    @user = User.create(email: 'test@test.com', name: 'Test', password: '123123')
+    @user = FactoryBot.create(:user)
   end
 
   describe 'POST /login' do

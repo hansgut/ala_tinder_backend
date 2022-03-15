@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(email: 'test@test.com', password: '123123', name: 'Test') }
+  subject { FactoryBot.create(:user) }
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
